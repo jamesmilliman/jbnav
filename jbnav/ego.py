@@ -97,9 +97,9 @@ class Ego:
         if self.process_func:
             output_image, output_control = self.process_func(np_image)
 
-            if self.save_proccessed:
+            if self.save_processed:
                 self.processed_images.append(output_image)
-
+            
             if not self.autopilot:
                 self.vehicle.apply_control(output_control)
 
@@ -123,6 +123,26 @@ class Ego:
             self._save_video_from_images(out, self.images)
             out.release()
 
+        if len(self.processed_images):
+            out_video = os.path.join(
+                "experiments_jbnav", self.experiment, "processed_images.mp4"
+            )
+            image_shape = self.processed_images[0].shape
+
+            print(image_shape)
+
+            fourcc = cv2.VideoWriter_fourcc("m", "p", "4", "v")
+            if len(image_shape) == 2:
+                out = cv2.VideoWriter(
+                    out_video, fourcc, 1 / 0.05, (image_shape[1], image_shape[0]), 0
+                )
+            else:
+                out = cv2.VideoWriter(
+                    out_video, fourcc, 1 / 0.05, (image_shape[1], image_shape[0]),
+                )
+            self._save_video_from_images(out, self.processed_images)
+            out.release()
+
         if len(self.controls) > 0:
             import jsonlines
 
@@ -138,12 +158,12 @@ class Ego:
         if self.vehicle:
             self.vehicle.destroy()
 
-        # save movies
-        # save images?
-
     def _save_video_from_images(self, writer, images):
         for i in range(len(images)):
-            writer.write(images[i])
+            img = images[i]
+            if img.max() <= 1:
+                img *= 255
+            writer.write(img)
 
     def _control_to_dict(self, control):
         return {

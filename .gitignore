@@ -2,3 +2,6 @@
 .ipynb_c*
 *.bak
 *__pyc*
+*.egg*
+examples/test/
+examples/experiments_jbnav/
