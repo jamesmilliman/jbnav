@@ -360,4 +360,4 @@ def lane_detection(img):
 
 import jbnav
 
-jbnav.run_experiment(lane_detection, seed=42)
+jbnav.run_experiment(lane_detection, duration=3)
