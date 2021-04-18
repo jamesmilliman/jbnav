@@ -4,4 +4,4 @@
 *__pyc*
 *.egg*
 examples/test/
-examples/experiments_jbnav/
+examples/jbnav_experiments/

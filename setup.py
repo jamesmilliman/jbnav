@@ -7,7 +7,7 @@ setup(
     license="MIT",
     description="TODO",
     long_description=open("README.md").read(),
-    install_requires=["numpy", "jsonlines", "opencv-python"],
+    install_requires=["numpy", "jsonlines", "opencv-python", "tqdm"],
     author="James Milliman",
     author_email="jaimsmilliman@gmail.com",
 )
