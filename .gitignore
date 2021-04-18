@@ -1,0 +1,4 @@
+.vscode/
+.ipynb_c*
+*.bak
+*__pyc*
