@@ -8,7 +8,7 @@ jbnav aims to supplement carla's shortcoming by making an easy to use library th
 
 ## Installation
 
-The use of this library requires the installation of CARLA 0.9.11 which can be found here: [CARLA 0.9.11](https://github.com/carla-simulator/carla/releases/tag/0.9.11)
+The use of this library requires the installation of CARLA 0.9.11 which can be found here: [CARLA 0.9.11](https://github.com/carla-simulator/carla/releases/tag/0.9.11) as well as Python 3.7
 
 Once CARLA is installed there should be a subdirectory named `PythonAPI`, and the full path to this folder should be stored in the environment variable `CARLA_PYTHON_ROOT`. An example of this would be `CARLA_PYTHON_ROOT=C:\Users\james\Documents\Masters\autonomous\project\CARLA_0.9.11\WindowsNoEditor\PythonAPI`
 
