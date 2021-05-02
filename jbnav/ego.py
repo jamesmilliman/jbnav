@@ -4,6 +4,7 @@ import numpy as np
 
 import os
 import random
+import time
 from queue import Queue
 
 
@@ -179,7 +180,8 @@ class Ego:
             self.cam.stop()
             self.cam.destroy()
         if self.vehicle:
-            self.vehicle.destroy()
+            self.client.apply_batch([carla.command.DestroyActor(self.vehicle)])
+
 
     def _save_video_from_images(self, writer, images):
         for i in range(len(images)):

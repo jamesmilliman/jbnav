@@ -25,31 +25,31 @@ def create_carla_weather(weather: str):
     if weather is None or not isinstance(weather, str):
         return carla.WeatherParameters.ClearNoon
 
-    if weather.lower() == 'CloudyNoon'.lower():
+    if weather.lower() == "CloudyNoon".lower():
         return carla.WeatherParameters.CloudNoon
-    elif weather.lower() == 'WetNoon'.lower():
+    elif weather.lower() == "WetNoon".lower():
         return carla.WeatherParameters.WetNoon
-    elif weather.lower() == 'WetCloudyNoon'.lower():
+    elif weather.lower() == "WetCloudyNoon".lower():
         return carla.WeatherParameters.WetCloudyNoon
-    elif weather.lower() == 'SoftRainNoon'.lower():
+    elif weather.lower() == "SoftRainNoon".lower():
         return carla.WeatherParameters.SoftRainNoon
-    elif weather.lower() == 'MidRainyNoon'.lower():
+    elif weather.lower() == "MidRainyNoon".lower():
         return carla.WeatherParameters.MidRainyNoon
-    elif weather.lower() == 'HardRainNoon'.lower():
+    elif weather.lower() == "HardRainNoon".lower():
         return carla.WeatherParameters.HardRainNoon
-    elif weather.lower() == 'ClearSunset'.lower():
+    elif weather.lower() == "ClearSunset".lower():
         return carla.WeatherParameters.ClearSunset
-    elif weather.lower() == 'CloudySunset'.lower():
+    elif weather.lower() == "CloudySunset".lower():
         return carla.WeatherParameters.CloudySunset
-    elif weather.lower() == 'WetSunset'.lower():
+    elif weather.lower() == "WetSunset".lower():
         return carla.WeatherParameters.WetSunset
-    elif weather.lower() == 'WetCloudySunset'.lower():
+    elif weather.lower() == "WetCloudySunset".lower():
         return carla.WeatherParameters.WetCloudySunset
-    elif weather.lower() == 'SoftRainSunset'.lower():
+    elif weather.lower() == "SoftRainSunset".lower():
         return carla.WeatherParameters.SoftRainSunset
-    elif weather.lower() == 'MidRainSunset'.lower():
+    elif weather.lower() == "MidRainSunset".lower():
         return carla.WeatherParameters.MidRainSunset
-    elif weather.lower() == 'HardRainSunset'.lower():
+    elif weather.lower() == "HardRainSunset".lower():
         return carla.WeatherParameters.HardRainSunset
     else:
         return carla.WeatherParameters.ClearNoon

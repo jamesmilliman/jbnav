@@ -65,6 +65,9 @@ def run_experiment(
         save_training_data (bool, optional): Whether to save a pickle file of CARLA image to autopilot controls. Defaults to False.
         traffic_size (tuple, optional): Size of traffic tuple of two ints, the first is the number of other vehicles, the second is the number of pedestrians. Defaults to None.
         seed (int, optional): Random seed to deterministic runs. Defaults to None.
+        weather (string, optional): Weather for the simulation, can be any of (ClearNoon, CloudyNoon, WetNoon, WetCloudyNoon, SoftRainNoon, MidRainyNoon, HardRainNoon, ClearSunset, WetSunset, WetCloudySunset, SoftRainSunset, MidRainSunset, HardRAinSunset). Default ClearNoon
+
+    Returns: Return experiment name as a string
     """
     while True:
         experiment = generate_name()
@@ -114,12 +117,15 @@ def run_experiment(
         for i in tqdm(range(1, total_frames + 1)):
             world.tick()
             ego_vehicle.step(i)
+    except Exception as e:
+        print(e)
 
-    finally:
-        world.apply_settings(original_settings)
-        traffic_manager.set_synchronous_mode(False)
+    world.apply_settings(original_settings)
+    traffic_manager.set_synchronous_mode(False)
 
-        ego_vehicle.cleanup()
-        if traffic:
-            traffic.cleanup()
-        print(f"jbnav experiment {experiment} complete and recorded")
+    ego_vehicle.cleanup()
+    if traffic:
+        traffic.cleanup()
+    
+    print(f"jbnav experiment '{experiment}'' complete and recorded")
+    return experiment
