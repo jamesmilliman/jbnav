@@ -24,6 +24,7 @@ import carla
 from .ego import Ego
 from .name_generator import generate_name
 from .traffic import Traffic
+from .weather import create_carla_weather
 
 import argparse
 import logging
@@ -47,6 +48,7 @@ def run_experiment(
     save_training_data=False,
     traffic_size=None,
     seed=None,
+    weather=None,
 ):
     """[summary]
 
@@ -91,6 +93,8 @@ def run_experiment(
         settings.synchronous_mode = True
         traffic_manager.set_synchronous_mode(True)
         world.apply_settings(settings)
+        print(create_carla_weather(weather))
+        world.set_weather(create_carla_weather(weather))
 
         ego_vehicle = Ego(
             experiment,

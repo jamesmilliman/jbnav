@@ -26,6 +26,8 @@ The main function to be called from the `jbnav` package is the `run_experiment` 
 
 This processing function can apply any transformations or models to the image to gain a better understanding of the image, i.e. segmentation, as well as optionally create a carla.VehicleControl in order to guide the vehicle (or use autopilot). Arguments to `run_experiment` can control the duration of the experiment, what data to save, traffic_size, etc.
 
+All use of the CARLA library requires the CARLA server to be running, which should be an executable file packaged with the CARLA installation from above.
+
 ## Meta
 Generated using cookiecutter template generated here: https://github.com/jamesmilliman/dgmd_e17-cookiecutter
 James Milliman - jaimsmilliman@gmail.com
