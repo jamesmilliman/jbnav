@@ -96,7 +96,6 @@ def run_experiment(
         settings.synchronous_mode = True
         traffic_manager.set_synchronous_mode(True)
         world.apply_settings(settings)
-        print(create_carla_weather(weather))
         world.set_weather(create_carla_weather(weather))
 
         ego_vehicle = Ego(
