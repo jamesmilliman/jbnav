@@ -186,4 +186,4 @@ class Traffic:
         )
         for i in range(0, len(self.all_id), 2):
             self.all_actors[i].stop()
-        client.apply_batch([carla.command.DestroyActor(x) for x in self.all_id])
+        self.client.apply_batch([carla.command.DestroyActor(x) for x in self.all_id])

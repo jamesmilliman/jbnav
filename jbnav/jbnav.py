@@ -65,7 +65,7 @@ def run_experiment(
         save_training_data (bool, optional): Whether to save a pickle file of CARLA image to autopilot controls. Defaults to False.
         traffic_size (tuple, optional): Size of traffic tuple of two ints, the first is the number of other vehicles, the second is the number of pedestrians. Defaults to None.
         seed (int, optional): Random seed to deterministic runs. Defaults to None.
-        weather (string, optional): Weather for the simulation, can be any of (ClearNoon, CloudyNoon, WetNoon, WetCloudyNoon, SoftRainNoon, MidRainyNoon, HardRainNoon, ClearSunset, WetSunset, WetCloudySunset, SoftRainSunset, MidRainSunset, HardRAinSunset). Default ClearNoon
+        weather (string, optional): Weather for the simulation, can be any of (ClearNoon, CloudyNoon, WetNoon, WetCloudyNoon, SoftRainNoon, MidRainyNoon, HardRainNoon, ClearSunset, WetSunset, WetCloudySunset, SoftRainSunset, MidRainSunset, HardRainSunset). Default ClearNoon
 
     Returns: Return experiment name as a string
     """
