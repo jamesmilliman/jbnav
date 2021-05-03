@@ -1,4 +1,4 @@
-Conditional Imitation Learning at CARLA
+Imitation Learning with CARLA Simulation
 ===============
 
 The goals / steps of this project are to use CARLA simulation video and associated control/state information to train a deep learning model to imitate the simulated driver based on image input. In this notebook, we will focus on simulating a single driver action, namely, the steering angle. In future efforts, we may attempt to predict additional control states such as gas and brake, as well.
@@ -6,12 +6,19 @@ The goals / steps of this project are to use CARLA simulation video and associat
 #### Environment Requirements
 
 h5py==2.10.0
+
 ipykernel==5.5.3
+
 matplotlib==3.4.1
+
 numpy==1.19.5
+
 opencv-python==4.5.1.48
+
 pandas==1.1.5
+
 seaborn==0.11.1
+
 tensorflow==2.4.1
 
 To run this notebook in a local environment:
