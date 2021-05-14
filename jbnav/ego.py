@@ -15,6 +15,7 @@ class Ego:
         client,
         process_func,
         autopilot,
+        camera_resolution,
         save_orig,
         save_processed,
         save_controls,
@@ -57,8 +58,8 @@ class Ego:
 
         cam_bp = None
         cam_bp = world.get_blueprint_library().find("sensor.camera.rgb")
-        cam_bp.set_attribute("image_size_x", str(1920))
-        cam_bp.set_attribute("image_size_y", str(1080))
+        cam_bp.set_attribute("image_size_x", str(camera_resolution[0]))
+        cam_bp.set_attribute("image_size_y", str(camera_resolution[1]))
         cam_bp.set_attribute("fov", str(60))
         cam_location = carla.Location(2, 0, 1.5)
         cam_rotation = carla.Rotation(0, 0, 0)

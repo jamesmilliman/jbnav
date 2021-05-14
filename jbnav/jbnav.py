@@ -41,6 +41,7 @@ def run_experiment(
     host="127.0.0.1",
     port=2000,
     tm_port=8000,
+    camera_resolution=(1920, 1080),
     autopilot=True,
     save_orig=True,
     save_processed=True,
@@ -58,6 +59,7 @@ def run_experiment(
         host (str, optional): host of CARLA server. Defaults to "127.0.0.1".
         port (int, optional): Port of CARLA server. Defaults to 2000.
         tm_port (int, optional): Port of CARLA traffic manager. Defaults to 8000.
+        camera_resolution (tuple, optional): Tuple of integers, width and height for camera resolution for the experiment
         autopilot (bool, optional): Whether to autopilot the vehicle, or an agent will be controlling it. Defaults to True.
         save_orig (bool, optional): Whether to save a video of the CARLA captured camera sensor. Defaults to True.
         save_processed (bool, optional): Whether to save a video of the processed image (if there is one). Defaults to True.
@@ -103,6 +105,7 @@ def run_experiment(
             client,
             process_func,
             autopilot,
+            camera_resolution,
             save_orig,
             save_processed,
             save_controls,
